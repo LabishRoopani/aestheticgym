@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Basic SEO -->
+  <title>The Gym - Premium Fitness Gym & Training Center</title>
+  <meta name="description" content="The Gym is a premium fitness center offering strength training, cardio, personal coaching, weight loss programs, and world-class gym equipment. Transform your body with expert trainers and a motivating environment." />
+  <meta name="keywords" content="gym, fitness gym, training center, weight loss, bodybuilding, cardio, strength training, personal trainer, workout classes, zumba, yoga, kickboxing, aerobics, India" />
+  <meta name="author" content="Finity Sync" />
+  
+  <!-- Styling -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="#home" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M4 8h2v8H4zm14 0h2v8h-2zm-3 1h2v6h-2zm-9 0h2v6H6zm4-2h4v10h-4z"/>
+        </svg>
+        <span>THE GYM</span>
+      </a>
+      
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#classes" class="nav-link">Classes</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#trainers" class="nav-link">Trainers</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Start Free Trial</a></li>
+      </ul>
+      
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-glow-blob"></div>
+      <div class="container hero-content">
+        <h1>Train Hard.<br>Stay Focused.</h1>
+        <p>Success is earned, not given. Join the most premium training network in India with world-class facilities and expert coaching designed to transform your limits.</p>
+        <div class="hero-buttons">
+          <a href="#pricing" class="btn btn-primary">Start 3-Day Free Trial</a>
+          <a href="#classes" class="btn btn-secondary">Explore Classes</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat-item">
+          <h3 data-target="38">38+</h3>
+          <p>Locations in India</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="272000">272K+</h3>
+          <p>Active Members</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="200">200+</h3>
+          <p>Certified Trainers</p>
+        </div>
+        <div class="stat-item">
+          <h3 data-target="100">100%</h3>
+          <p>Results Guarantee</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title"><span>Why Choose Us</span>World-Class Fitness</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <span class="feature-icon">🏋️</span>
+            <h3>Strength Training</h3>
+            <p>Premium free-weight zones, state-of-the-art plate-loaded machines, and dedicated powerlifting platforms.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🏃</span>
+            <h3>Cardio & HIIT</h3>
+            <p>Interactive treadmills, ellipticals, rowing systems, and customized high-intensity training zones.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🎯</span>
+            <h3>Personal Coaching</h3>
+            <p>1-on-1 guidance from certified elite fitness coaches focusing on customized form, safety, and metrics.</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🍹</span>
+            <h3>Premium Amenities</h3>
+            <p>Access-controlled lockers, luxurious shower facilities, a member lounge, and organic beverage bars.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filterable Classes Section -->
+    <section id="classes" class="classes">
+      <div class="container">
+        <h2 class="section-title"><span>Our Schedule</span>Interactive Classes</h2>
+        
+        <div class="class-filters">
+          <button class="filter-btn active" data-filter="all">All Classes</button>
+          <button class="filter-btn" data-filter="strength">Strength</button>
+          <button class="filter-btn" data-filter="cardio">Cardio</button>
+          <button class="filter-btn" data-filter="mind-body">Mind & Body</button>
+        </div>
+        
+        <div class="classes-grid" id="classes-grid">
+          <!-- Class Card 1 -->
+          <div class="class-card" data-category="cardio">
+            <div class="class-img">
+              <span class="class-tag">Cardio</span>
+              <img src="images/class_kickboxing.png" alt="Kick Boxing class" />
+            </div>
+            <div class="class-body">
+              <h3>Kick Boxing</h3>
+              <p>Burn calories, improve coordination, and build core power in a high-energy kickboxing session led by combat experts.</p>
+              <div class="class-meta">
+                <span>⏱️ 45 Mins</span>
+                <span>🔥 600 kcal</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Class Card 2 -->
+          <div class="class-card" data-category="cardio">
+            <div class="class-img">
+              <span class="class-tag">Cardio</span>
+              <img src="images/hero_bg.png" alt="Aerobics class" />
+            </div>
+            <div class="class-body">
+              <h3>Aerobics</h3>
+              <p>Dynamic group sessions combining cardiovascular exercises with upbeat music for an energetic, fat-burning rhythm.</p>
+              <div class="class-meta">
+                <span>⏱️ 50 Mins</span>
+                <span>🔥 450 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Card 3 -->
+          <div class="class-card" data-category="strength">
+            <div class="class-img">
+              <span class="class-tag">Strength</span>
+              <img src="images/hero_bg.png" alt="Strength Training class" />
+            </div>
+            <div class="class-body">
+              <h3>Strength Training</h3>
+              <p>Focus on structural muscle building, functional lifts, and progressive resistance coaching for all fitness levels.</p>
+              <div class="class-meta">
+                <span>⏱️ 60 Mins</span>
+                <span>🔥 500 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Card 4 -->
+          <div class="class-card" data-category="strength">
+            <div class="class-img">
+              <span class="class-tag">Strength</span>
+              <img src="images/hero_bg.png" alt="Free Weights session" />
+            </div>
+            <div class="class-body">
+              <h3>Free Weights</h3>
+              <p>Master the barbell, dumbbells, and kettlebells under professional guidance to maximize hypertrophic and raw power gains.</p>
+              <div class="class-meta">
+                <span>⏱️ 45 Mins</span>
+                <span>🔥 400 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Card 5 -->
+          <div class="class-card" data-category="mind-body">
+            <div class="class-img">
+              <span class="class-tag">Mind & Body</span>
+              <img src="images/class_yoga.png" alt="Power Yoga poses" />
+            </div>
+            <div class="class-body">
+              <h3>Power Yoga</h3>
+              <p>Synchronize breath and strength in dynamic flows designed to stretch, balance, and align your physical and mental energy.</p>
+              <div class="class-meta">
+                <span>⏱️ 60 Mins</span>
+                <span>🔥 300 kcal</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Class Card 6 -->
+          <div class="class-card" data-category="cardio">
+            <div class="class-img">
+              <span class="class-tag">Cardio</span>
+              <img src="images/class_kickboxing.png" alt="Zumba dance session" />
+            </div>
+            <div class="class-body">
+              <h3>Zumba</h3>
+              <p>Dance-centered aerobic fitness interval workouts that feel like a party. High tempo, highly motivating, and fun.</p>
+              <div class="class-meta">
+                <span>⏱️ 45 Mins</span>
+                <span>🔥 500 kcal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+      <div class="container">
+        <h2 class="section-title"><span>Membership Plans</span>Simple Pricing</h2>
+        
+        <div class="pricing-toggle-container">
+          <span id="label-monthly" class="active">Monthly</span>
+          <label class="switch">
+            <input type="checkbox" id="pricing-toggle" />
+            <span class="slider"></span>
+          </label>
+          <span id="label-yearly">Yearly (Save 20%)</span>
+        </div>
+        
+        <div class="pricing-grid">
+          <!-- Card 1: Free Trial -->
+          <div class="price-card">
+            <div class="price-header">
+              <h3>3-Day Trial</h3>
+              <div class="price-value">₹0</div>
+              <p>Perfect for testing the waters</p>
+            </div>
+            <ul class="price-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                3 Days Full Gym Access
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Attend any Group Class
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                1 Coach consultation
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Locker & shower access
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Get Trial</a>
+          </div>
+
+          <!-- Card 2: Standard Plan -->
+          <div class="price-card popular">
+            <div class="price-header">
+              <h3>Standard Pass</h3>
+              <div class="price-value">₹<span id="price-standard">2,999</span><span>/mo</span></div>
+              <p>Our most requested general plan</p>
+            </div>
+            <ul class="price-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Unlimited Facility Access
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                All Aerobics & Zumba classes
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Bi-monthly fitness reviews
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Locker access & free parking
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Choose Plan</a>
+          </div>
+
+          <!-- Card 3: Elite VIP Plan -->
+          <div class="price-card">
+            <div class="price-header">
+              <h3>Elite VIP</h3>
+              <div class="price-value">₹<span id="price-elite">5,999</span><span>/mo</span></div>
+              <p>Unrestricted premium VIP lifestyle</p>
+            </div>
+            <ul class="price-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Facility access at all 38 locations
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Dedicated personal coach (12 sessions)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Custom clinical diet plans
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                VIP lounge entry & complimentary drinks
+              </li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary">Go VIP</a>
+          </div>
+        </div>
+
+        <!-- Hot Deals banner -->
+        <div class="offers-banner">
+          <h3>Hot Promotional Partnerships</h3>
+          <div class="offers-grid">
+            <div class="offer-card">
+              <div class="offer-badge">40% OFF</div>
+              <div class="offer-info">
+                <h4>HDFC Cardholders</h4>
+                <p>Discount applicable on Elite yearly subscription plans.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-badge">40% OFF</div>
+              <div class="offer-info">
+                <h4>ICICI Cardholders</h4>
+                <p>Flat discount on yearly passes using net banking.</p>
+              </div>
+            </div>
+            <div class="offer-card">
+              <div class="offer-badge">15% OFF</div>
+              <div class="offer-info">
+                <h4>Nandos Cardholders</h4>
+                <p>Show your Nandos card at front desks to redeem instant offer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trainers Grid Section -->
+    <section id="trainers" class="trainers">
+      <div class="container">
+        <h2 class="section-title"><span>Expert Guides</span>Certified Coaching</h2>
+        <div class="trainers-grid">
+          <!-- Trainer 1 -->
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="images/trainer_male.png" alt="Male Coach Marcus" />
+              <div class="trainer-overlay">
+                <div class="trainer-info">
+                  <h3>Marcus Aurelius</h3>
+                  <p>Strength & Conditioning Specialist</p>
+                  <ul class="trainer-socials">
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
+                    <li><a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 2 -->
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="images/trainer_female.png" alt="Female Coach Diana" />
+              <div class="trainer-overlay">
+                <div class="trainer-info">
+                  <h3>Diana Prince</h3>
+                  <p>HIIT & Yoga Director</p>
+                  <ul class="trainer-socials">
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
+                    <li><a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer 3 -->
+          <div class="trainer-card">
+            <div class="trainer-img">
+              <img src="images/hero_bg.png" alt="Male Coach Vikram" />
+              <div class="trainer-overlay">
+                <div class="trainer-info">
+                  <h3>Vikram Rathore</h3>
+                  <p>Elite Bodybuilding Coach</p>
+                  <ul class="trainer-socials">
+                    <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
+                    <li><a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title"><span>Member Stories</span>Community Feedback</h2>
+        
+        <div class="testimonials-carousel">
+          <div class="testimonial-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active">
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-quote">"The facilities are absolutely world class. Moving to The Gym transformed my training consistency. The plate loaded selection is unmatched in India."</p>
+              <div class="testimonial-author">
+                <h4>Rahul Sharma</h4>
+                <p>Member since 2024</p>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-quote">"The 3-day trial was completely hassle-free. Signed up right after, and ICICI bank 40% discount made it a fantastic deal. Coaches are highly certified."</p>
+              <div class="testimonial-author">
+                <h4>Priya Patel</h4>
+                <p>Yoga & HIIT Regular</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-rating">★★★★★</div>
+              <p class="testimonial-quote">"Outstanding equipment maintenance and VIP amenities. Biometric lockers and lounge services make me feel like a premium athlete every day."</p>
+              <div class="testimonial-author">
+                <h4>Karan Malhotra</h4>
+                <p>Elite VIP Member</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-nav">
+            <button class="carousel-btn" id="prev-btn" aria-label="Previous Review">
+              <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+            </button>
+            <button class="carousel-btn" id="next-btn" aria-label="Next Review">
+              <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Locations -->
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h3>Contact Our Hubs</h3>
+          <p>Get in touch with us to activate your 3-day free trial or enquire about corporate rates. Select your nearest hub location below for specific coordinates.</p>
+          
+          <div class="location-selector">
+            <label for="hub-select">Select Hub Location</label>
+            <div class="select-wrapper">
+              <select id="hub-select">
+                <option value="delhi" data-lat="28.6139" data-lon="77.2090" data-phone="+91 11-4567-8901">New Delhi (Connaught Place)</option>
+                <option value="mumbai" data-lat="19.0760" data-lon="72.8777" data-phone="+91 22-9876-5432">Mumbai (Bandra West)</option>
+                <option value="bangalore" data-lat="12.9716" data-lon="77.5946" data-phone="+91 80-2345-6789">Bangalore (Indiranagar)</option>
+                <option value="pune" data-lat="18.5204" data-lon="73.8567" data-phone="+91 20-3456-7890">Pune (Koregaon Park)</option>
+                <option value="hyderabad" data-lat="17.3850" data-lon="78.4867" data-phone="+91 40-7654-3210">Hyderabad (Gachibowli)</option>
+                <option value="chandigarh" data-lat="30.7333" data-lon="76.7794" data-phone="+91 172-876-543">Chandigarh (Sector 38C)</option>
+              </select>
+            </div>
+          </div>
+          
+          <ul class="contact-details">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <span id="contact-phone">+91 11-4567-8901</span> (Or Toll-Free: 1800-123-4567)
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              info@thegym.com
+            </li>
+          </ul>
+
+          <div class="mock-map">
+            <div class="map-placeholder">
+              <span class="map-marker">📍</span>
+              <div class="map-coords" id="map-coords">Lat: 28.6139, Lon: 77.2090</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form" id="trial-form" novalidate>
+            <h3>Get Your 3-Day Pass</h3>
+            
+            <div class="form-group">
+              <input type="text" id="form-name" placeholder=" " required />
+              <label for="form-name">Full Name</label>
+              <div class="form-error" id="error-name">Please enter your name</div>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="form-email" placeholder=" " required />
+              <label for="form-email">Email Address</label>
+              <div class="form-error" id="error-email">Please enter a valid email</div>
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="form-phone" placeholder=" " required />
+              <label for="form-phone">Phone Number</label>
+              <div class="form-error" id="error-phone">Please enter a valid 10-digit number</div>
+            </div>
+
+            <div class="form-group">
+              <textarea id="form-message" placeholder=" "></textarea>
+              <label for="form-message">Special Requirements / Fitness Goal</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">Request Invitation</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M4 8h2v8H4zm14 0h2v8h-2zm-3 1h2v6h-2zm-9 0h2v6H6zm4-2h4v10h-4z"/>
+          </svg>
+          <span>THE GYM</span>
+        </a>
+        <p>Providing premium health and physical empowerment across 38 facilities in India since 2016.</p>
+        <ul class="footer-socials">
+          <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a></li>
+          <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Fitness Hubs</h4>
+        <ul>
+          <li><a href="#contact">Connaught Place, Delhi</a></li>
+          <li><a href="#contact">Bandra West, Mumbai</a></li>
+          <li><a href="#contact">Indiranagar, Bangalore</a></li>
+          <li><a href="#contact">Koregaon Park, Pune</a></li>
+          <li><a href="#contact">Gachibowli, Hyderabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Offerings</h4>
+        <ul>
+          <li><a href="#features">Strength Training</a></li>
+          <li><a href="#features">HIIT Cardio Circuits</a></li>
+          <li><a href="#classes">Kick Boxing</a></li>
+          <li><a href="#classes">Power Yoga Sessions</a></li>
+          <li><a href="#classes">Zumba Choreography</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#home">Home Base</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Membership Rates</a></li>
+          <li><a href="#trainers">Expert Coaches</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 The Gym Network. All rights reserved. Designed & developed by Finity Sync.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Rules & Regulations</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive">
+    <span id="toast-icon">ℹ️</span>
+    <span id="toast-message">Notification message goes here</span>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
