@@ -439,29 +439,29 @@
         </div>
 
         <div class="contact-form-container">
-          <form class="contact-form" id="trial-form" novalidate>
+          <form class="contact-form" id="trial-form" data-formspree-id="YOUR_FORMSPREE_ID" novalidate>
             <h3>Register Your Free Pass</h3>
             
             <div class="form-group">
-              <input type="text" id="form-name" placeholder=" " required />
+              <input type="text" id="form-name" name="name" placeholder=" " required />
               <label for="form-name">Full Name</label>
               <div class="form-error" id="error-name">Please enter your name</div>
             </div>
 
             <div class="form-group">
-              <input type="email" id="form-email" placeholder=" " required />
+              <input type="email" id="form-email" name="email" placeholder=" " required />
               <label for="form-email">Email Address</label>
               <div class="form-error" id="error-email">Please enter a valid email</div>
             </div>
 
             <div class="form-group">
-              <input type="tel" id="form-phone" placeholder=" " required />
+              <input type="tel" id="form-phone" name="phone" placeholder=" " required />
               <label for="form-phone">Phone Number (03xxxxxxxxx)</label>
               <div class="form-error" id="error-phone">Please enter a valid 11-digit mobile number</div>
             </div>
 
             <div class="form-group">
-              <textarea id="form-message" placeholder=" "></textarea>
+              <textarea id="form-message" name="message" placeholder=" "></textarea>
               <label for="form-message">Special Requirements / Fitness Goal</label>
             </div>
 

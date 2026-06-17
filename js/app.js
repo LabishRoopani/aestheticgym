@@ -283,8 +283,49 @@ function initContactForm() {
     }
 
     if (isValid) {
-      showToast('Pass Registered! Your free access invite has been sent. A coach will contact you within 24 hours.', 'success');
-      form.reset();
+      const formspreeId = form.getAttribute('data-formspree-id') || 'YOUR_FORMSPREE_ID';
+      
+      if (formspreeId === 'YOUR_FORMSPREE_ID' || formspreeId.trim() === '') {
+        // Mock Mode (when user hasn't set up the ID yet)
+        showToast('Pass Registered! Your free access invite has been sent. A coach will contact you within 24 hours.', 'success');
+        form.reset();
+      } else {
+        // Real Mode (AJAX post to Formspree)
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Registering...';
+        submitBtn.disabled = true;
+
+        fetch(`https://formspree.io/f/${formspreeId}`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            phone: rawPhone,
+            message: document.getElementById('form-message').value.trim(),
+            hub: document.getElementById('hub-select').options[document.getElementById('hub-select').selectedIndex].text
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            showToast('Pass Registered! Your free access invite has been sent. A coach will contact you within 24 hours.', 'success');
+            form.reset();
+          } else {
+            showToast('Failed to send request. Please try again or email info@aestheticgym.pk', 'error');
+          }
+        })
+        .catch(() => {
+          showToast('Network error. Please check your connection and try again.', 'error');
+        })
+        .finally(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        });
+      }
     } else {
       showToast('Please correct the details in the form.', 'error');
     }
