@@ -315,7 +315,7 @@ function initContactForm() {
             showToast('Pass Registered! Your free access invite has been sent. A coach will contact you within 24 hours.', 'success');
             form.reset();
           } else {
-            showToast('Failed to send request. Please try again or email info@aestheticgym.pk', 'error');
+            showToast('Failed to send request. Please try again or email olabasir446@gmail.com', 'error');
           }
         })
         .catch(() => {
