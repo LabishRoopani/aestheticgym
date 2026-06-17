@@ -1,6 +1,6 @@
 /**
- * The Gym — Client Interactions Controller
- * Developed by Finity Sync for The Gym Premium Network
+ * AestheticGym — Client Interactions Controller
+ * Developed by Finity Sync for AestheticGym Network
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveLinkObserver();
   initStatsCounter();
   initClassFilters();
-  initPricingToggle();
   initTestimonialsCarousel();
   initLocationSelector();
   initContactForm();
@@ -170,69 +169,7 @@ function initClassFilters() {
 }
 
 /* ==========================================================================
-   5. Membership Pricing Toggle
-   ========================================================================== */
-function initPricingToggle() {
-  const toggle = document.getElementById('pricing-toggle');
-  const labelMonthly = document.getElementById('label-monthly');
-  const labelYearly = document.getElementById('label-yearly');
-  
-  const standardPrice = document.getElementById('price-standard');
-  const elitePrice = document.getElementById('price-elite');
-
-  // Rates definition
-  const prices = {
-    monthly: {
-      standard: '2,999',
-      elite: '5,999',
-      standardSuffix: '/mo',
-      eliteSuffix: '/mo'
-    },
-    yearly: {
-      standard: '23,999',
-      elite: '47,999',
-      standardSuffix: '/yr',
-      eliteSuffix: '/yr'
-    }
-  };
-
-  toggle.addEventListener('change', () => {
-    const isYearly = toggle.checked;
-
-    if (isYearly) {
-      labelMonthly.classList.remove('active');
-      labelYearly.classList.add('active');
-      
-      updatePrice(standardPrice, prices.yearly.standard, prices.yearly.standardSuffix);
-      updatePrice(elitePrice, prices.yearly.elite, prices.yearly.eliteSuffix);
-    } else {
-      labelMonthly.classList.add('active');
-      labelYearly.classList.remove('active');
-      
-      updatePrice(standardPrice, prices.monthly.standard, prices.monthly.standardSuffix);
-      updatePrice(elitePrice, prices.monthly.elite, prices.monthly.eliteSuffix);
-    }
-  });
-
-  function updatePrice(element, newPrice, suffixText) {
-    // Fade out
-    element.parentElement.style.opacity = '0';
-    element.parentElement.style.transform = 'translateY(-10px)';
-    
-    setTimeout(() => {
-      element.innerHTML = newPrice;
-      element.nextElementSibling.innerHTML = suffixText;
-      
-      // Fade in
-      element.parentElement.style.transition = 'all 0.3s ease';
-      element.parentElement.style.opacity = '1';
-      element.parentElement.style.transform = 'translateY(0)';
-    }, 200);
-  }
-}
-
-/* ==========================================================================
-   6. Testimonials Carousel Slider
+   5. Testimonials Carousel Slider
    ========================================================================== */
 function initTestimonialsCarousel() {
   const slides = document.querySelectorAll('.testimonial-slide');
@@ -281,7 +218,7 @@ function initTestimonialsCarousel() {
 }
 
 /* ==========================================================================
-   7. Hub Locations Coordinator & Mock Map
+   6. Hub Locations Coordinator & Mock Map
    ========================================================================== */
 function initLocationSelector() {
   const select = document.getElementById('hub-select');
@@ -308,7 +245,7 @@ function initLocationSelector() {
 }
 
 /* ==========================================================================
-   8. Form Validation & Feedbacks
+   7. Form Validation & Feedbacks
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('trial-form');
@@ -337,24 +274,25 @@ function initContactForm() {
       isValid = false;
     }
 
-    // Phone Validate (10-digit Indian mobile standard check)
-    const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(phoneInput.value.replace(/\s+/g, ''))) {
+    // Phone Validate (11-digit Pakistani standard starting with 03)
+    const rawPhone = phoneInput.value.replace(/[\s\-()]+/g, '');
+    const phoneRegex = /^03\d{9}$/;
+    if (!phoneRegex.test(rawPhone)) {
       document.getElementById('error-phone').style.display = 'block';
       isValid = false;
     }
 
     if (isValid) {
-      showToast('Invitation Sent! Your 3-day pass request has been registered. Our coach will contact you shortly.', 'success');
+      showToast('Pass Registered! Your free access invite has been sent. A coach will contact you within 24 hours.', 'success');
       form.reset();
     } else {
-      showToast('Please correct the errors in the form.', 'error');
+      showToast('Please correct the details in the form.', 'error');
     }
   });
 }
 
 /* ==========================================================================
-   9. Toast Notification System
+   8. Toast Notification System
    ========================================================================== */
 function showToast(message, type = 'info') {
   const toast = document.getElementById('toast');
