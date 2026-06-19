@@ -3,11 +3,22 @@
  * Developed by Finity Sync for AestheticGym Network
  */
 
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered successfully.', reg.scope))
+      .catch(err => console.log('Service Worker registration failed.', err));
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initActiveLinkObserver();
   initStatsCounter();
   initClassFilters();
+  initClassViewToggle();
+  initFaqAccordion();
   initTestimonialsCarousel();
   initLocationSelector();
   initContactForm();
@@ -220,27 +231,46 @@ function initTestimonialsCarousel() {
 /* ==========================================================================
    6. Hub Locations Coordinator & Mock Map
    ========================================================================== */
+let map, mapMarker;
+
 function initLocationSelector() {
   const select = document.getElementById('hub-select');
   const phoneText = document.getElementById('contact-phone');
   const coordsText = document.getElementById('map-coords');
-  const marker = document.querySelector('.map-marker');
+
+  const defaultLat = 24.8138;
+  const defaultLon = 67.0311;
+
+  if (document.getElementById('map')) {
+    map = L.map('map', {
+      zoomControl: true,
+      scrollWheelZoom: false
+    }).setView([defaultLat, defaultLon], 14);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+      subdomains: 'abcd',
+      maxZoom: 20
+    }).addTo(map);
+
+    mapMarker = L.marker([defaultLat, defaultLon]).addTo(map);
+    mapMarker.bindPopup("<b>AestheticGym Hub</b><br>Karachi (Clifton Block 5)").openPopup();
+  }
 
   select.addEventListener('change', () => {
     const selectedOption = select.options[select.selectedIndex];
     const phone = selectedOption.getAttribute('data-phone');
-    const lat = selectedOption.getAttribute('data-lat');
-    const lon = selectedOption.getAttribute('data-lon');
+    const lat = parseFloat(selectedOption.getAttribute('data-lat'));
+    const lon = parseFloat(selectedOption.getAttribute('data-lon'));
 
-    // Update Text Details
     phoneText.innerHTML = phone;
-    coordsText.innerHTML = `Lat: ${lat}, Lon: ${lon}`;
+    coordsText.innerHTML = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
 
-    // Micro-animation for map marker
-    marker.style.animation = 'none';
-    // Trigger reflow to restart animation
-    void marker.offsetWidth; 
-    marker.style.animation = 'bounce 1s ease 2';
+    if (map && mapMarker) {
+      map.setView([lat, lon], 14);
+      mapMarker.setLatLng([lat, lon]);
+      mapMarker.bindPopup(`<b>AestheticGym Hub</b><br>${selectedOption.text}`).openPopup();
+    }
   });
 }
 
@@ -363,3 +393,157 @@ function showToast(message, type = 'info') {
     toast.classList.remove('show');
   }, 4000);
 }
+
+/* ==========================================================================
+   9. FAQ Accordion Clicks
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.parentElement;
+      const faqAnswer = faqItem.querySelector('.faq-answer');
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        item.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+
+      // Toggle active for clicked item
+      if (!isActive) {
+        faqItem.classList.add('active');
+        faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   10. Class View Switcher & Weekly Timetable Grid
+   ========================================================================== */
+const TIMETABLE_DATA = {
+  Mon: [
+    { time: '07:00 AM', name: 'Power Yoga', coach: 'Ayesha Malik', room: 'Studio A' },
+    { time: '09:00 AM', name: 'Strength Training', coach: 'Bilal Khan', room: 'Power Zone' },
+    { time: '05:00 PM', name: 'Kick Boxing', coach: 'Bilal Khan', room: 'Combat Hall' },
+    { time: '07:00 PM', name: 'Zumba', coach: 'Ayesha Malik', room: 'Studio B' }
+  ],
+  Tue: [
+    { time: '08:00 AM', name: 'Aerobics', coach: 'Ayesha Malik', room: 'Studio B' },
+    { time: '10:00 AM', name: 'Free Weights', coach: 'Zain Siddiqui', room: 'Iron Room' },
+    { time: '06:00 PM', name: 'Strength Training', coach: 'Zain Siddiqui', room: 'Power Zone' }
+  ],
+  Wed: [
+    { time: '07:00 AM', name: 'Power Yoga', coach: 'Ayesha Malik', room: 'Studio A' },
+    { time: '09:00 AM', name: 'Free Weights', coach: 'Zain Siddiqui', room: 'Iron Room' },
+    { time: '05:00 PM', name: 'Kick Boxing', coach: 'Bilal Khan', room: 'Combat Hall' }
+  ],
+  Thu: [
+    { time: '08:00 AM', name: 'Aerobics', coach: 'Ayesha Malik', room: 'Studio B' },
+    { time: '10:00 AM', name: 'Strength Training', coach: 'Bilal Khan', room: 'Power Zone' },
+    { time: '06:00 PM', name: 'Zumba', coach: 'Ayesha Malik', room: 'Studio B' }
+  ],
+  Fri: [
+    { time: '07:00 AM', name: 'Power Yoga', coach: 'Ayesha Malik', room: 'Studio A' },
+    { time: '09:00 AM', name: 'Free Weights', coach: 'Zain Siddiqui', room: 'Iron Room' },
+    { time: '05:00 PM', name: 'Kick Boxing', coach: 'Bilal Khan', room: 'Combat Hall' },
+    { time: '07:00 PM', name: 'Zumba', coach: 'Ayesha Malik', room: 'Studio B' }
+  ],
+  Sat: [
+    { time: '09:00 AM', name: 'Strength Training', coach: 'Bilal Khan', room: 'Power Zone' },
+    { time: '11:00 AM', name: 'Aerobics', coach: 'Ayesha Malik', room: 'Studio B' },
+    { time: '04:00 PM', name: 'Zumba', coach: 'Ayesha Malik', room: 'Studio B' }
+  ]
+};
+
+function initClassViewToggle() {
+  const cardsBtn = document.getElementById('view-cards-btn');
+  const timetableBtn = document.getElementById('view-timetable-btn');
+  
+  const overviewView = document.getElementById('classes-overview-view');
+  const timetableView = document.getElementById('timetable-view');
+  
+  const dayButtons = document.querySelectorAll('.day-btn');
+
+  if (cardsBtn && timetableBtn) {
+    cardsBtn.addEventListener('click', () => {
+      cardsBtn.classList.add('active');
+      timetableBtn.classList.remove('active');
+      overviewView.style.display = 'block';
+      timetableView.style.display = 'none';
+    });
+
+    timetableBtn.addEventListener('click', () => {
+      timetableBtn.classList.add('active');
+      cardsBtn.classList.remove('active');
+      overviewView.style.display = 'none';
+      timetableView.style.display = 'block';
+      renderTimetable('Mon');
+    });
+  }
+
+  dayButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      dayButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const day = btn.getAttribute('data-day');
+      renderTimetable(day);
+    });
+  });
+}
+
+function renderTimetable(day) {
+  const grid = document.getElementById('timetable-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  const entries = TIMETABLE_DATA[day] || [];
+
+  if (entries.length === 0) {
+    grid.innerHTML = '<div style="text-align:center; padding: 20px; color: var(--text-muted);">No classes scheduled for today.</div>';
+    return;
+  }
+
+  entries.forEach(entry => {
+    const row = document.createElement('div');
+    row.className = 'timetable-row';
+    row.innerHTML = `
+      <div class="timetable-time">${entry.time}</div>
+      <div class="timetable-class">${entry.name}</div>
+      <div class="timetable-coach">${entry.coach}</div>
+      <div class="timetable-room">${entry.room}</div>
+      <div class="timetable-action">
+        <button class="btn-book" onclick="bookClass('${entry.name}', '${day}', '${entry.time}')">Book Slot</button>
+      </div>
+    `;
+    grid.appendChild(row);
+  });
+}
+
+// Global class booking event wire
+window.bookClass = function(className, day, time) {
+  const messageInput = document.getElementById('form-message');
+  const contactSection = document.getElementById('contact');
+  
+  const daysFull = {
+    Mon: 'Monday',
+    Tue: 'Tuesday',
+    Wed: 'Wednesday',
+    Thu: 'Thursday',
+    Fri: 'Friday',
+    Sat: 'Saturday'
+  };
+
+  if (messageInput && contactSection) {
+    messageInput.value = `I would like to book a slot for the "${className}" session on ${daysFull[day] || day} at ${time}.`;
+    
+    // Smooth scroll to form
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+
+    // Focus input
+    messageInput.focus();
+  }
+};

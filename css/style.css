@@ -1391,6 +1391,272 @@ footer {
   }
 }
 
+/* Classes View Switcher */
+.classes-view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.view-toggle-btn {
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.view-toggle-btn.active, .view-toggle-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: hsl(220, 20%, 5%);
+  border-color: transparent;
+  box-shadow: var(--glow-shadow);
+}
+
+/* Timetable View Grid */
+.timetable-view {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.timetable-days {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.day-btn {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.day-btn.active, .day-btn:hover {
+  background-color: var(--primary);
+  color: hsl(220, 20%, 5%);
+  border-color: var(--primary);
+}
+
+.timetable-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timetable-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr 1.5fr 1fr;
+  align-items: center;
+  padding: 20px 25px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.timetable-row:hover {
+  border-color: var(--primary-glow);
+  background-color: rgba(255, 255, 255, 0.04);
+  transform: translateX(5px);
+}
+
+.timetable-time {
+  font-family: var(--font-header);
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.timetable-class {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.timetable-coach {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.timetable-room {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.timetable-action .btn-book {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary-glow);
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.timetable-action .btn-book:hover {
+  background: var(--primary);
+  color: hsl(220, 20%, 5%);
+  border-color: var(--primary);
+  box-shadow: var(--glow-shadow);
+}
+
+/* FAQ Accordion Section */
+.faq {
+  padding: 100px 0;
+  background-color: hsl(220, 20%, 3%);
+  border-top: 1px solid var(--border-light);
+}
+
+.faq-accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.faq-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-item:hover {
+  border-color: var(--primary-glow);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 22px 30px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-header);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-icon {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: var(--primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.faq-answer p {
+  padding: 0 30px 22px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Leaflet Map Customizations (Dark Theme Filter Hack) */
+.leaflet-container {
+  background-color: var(--bg-deep) !important;
+}
+
+.leaflet-tile-container img {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.leaflet-bar {
+  border: 1px solid var(--border-light) !important;
+}
+
+.leaflet-bar a {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--bg-input) !important;
+  color: var(--primary) !important;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--card-shadow) !important;
+  border-radius: var(--radius-sm);
+}
+
+.leaflet-popup-content h4 {
+  font-family: var(--font-header);
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.leaflet-popup-content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Mobile responsive fixes for Timetable and FAQ */
+@media (max-width: 768px) {
+  .timetable-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .timetable-action {
+    margin-top: 5px;
+  }
+  
+  .faq-question {
+    padding: 18px 20px;
+    font-size: 1.1rem;
+  }
+  
+  .faq-answer p {
+    padding: 0 20px 18px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

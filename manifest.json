@@ -1,0 +1,22 @@
+{
+  "name": "AestheticGym - Premium Fitness Network",
+  "short_name": "AestheticGym",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05070a",
+  "theme_color": "#05070a",
+  "description": "Pakistan's premium free fitness training network.",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/trainer_male.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/trainer_female.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
