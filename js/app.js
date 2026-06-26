@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialsCarousel();
   initLocationSelector();
   initContactForm();
+  initVideoModal();
 });
 
 /* ==========================================================================
@@ -547,3 +548,46 @@ window.bookClass = function(className, day, time) {
     messageInput.focus();
   }
 };
+
+/* ==========================================================================
+   11. Video Lightbox Modal Controls
+   ========================================================================== */
+function initVideoModal() {
+  const modal = document.getElementById('video-modal');
+  const modalClose = document.getElementById('video-modal-close');
+  const video = document.getElementById('class-preview-video');
+  const playButtons = document.querySelectorAll('.play-video-btn');
+
+  if (!modal || !modalClose || !video) return;
+
+  playButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const videoSrc = button.getAttribute('data-video');
+      if (videoSrc) {
+        video.src = videoSrc;
+        modal.classList.add('active');
+        video.play().catch(err => console.log('Play failed/blocked:', err));
+      }
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove('active');
+    video.pause();
+    video.src = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}

@@ -142,6 +142,11 @@
             <div class="class-img">
               <span class="class-tag">Cardio</span>
               <img src="images/class_kickboxing.png" alt="Kick Boxing class" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-boxing-athlete-training-in-the-gym-31364-large.mp4" aria-label="Play Kick Boxing Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Kick Boxing</h3>
@@ -158,6 +163,11 @@
             <div class="class-img">
               <span class="class-tag">Cardio</span>
               <img src="images/hero_bg.png" alt="Aerobics class" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-young-woman-doing-aerobic-exercises-in-gym-40542-large.mp4" aria-label="Play Aerobics Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Aerobics</h3>
@@ -174,6 +184,11 @@
             <div class="class-img">
               <span class="class-tag">Strength</span>
               <img src="images/hero_bg.png" alt="Strength Training class" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-weightlifter-preparing-to-lift-barbell-31365-large.mp4" aria-label="Play Strength Training Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Strength Training</h3>
@@ -190,6 +205,11 @@
             <div class="class-img">
               <span class="class-tag">Strength</span>
               <img src="images/hero_bg.png" alt="Free Weights session" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-exercising-with-dumbbells-40890-large.mp4" aria-label="Play Free Weights Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Free Weights</h3>
@@ -206,6 +226,11 @@
             <div class="class-img">
               <span class="class-tag">Mind & Body</span>
               <img src="images/class_yoga.png" alt="Power Yoga poses" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-woman-practicing-yoga-in-gym-40892-large.mp4" aria-label="Play Power Yoga Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Power Yoga</h3>
@@ -222,6 +247,11 @@
             <div class="class-img">
               <span class="class-tag">Cardio</span>
               <img src="images/class_kickboxing.png" alt="Zumba dance session" />
+              <button class="play-video-btn" data-video="https://assets.mixkit.co/videos/preview/mixkit-people-dancing-zumba-in-gym-40895-large.mp4" aria-label="Play Zumba Video">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
             </div>
             <div class="class-body">
               <h3>Zumba</h3>
@@ -595,6 +625,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Video Lightbox Modal -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Class Preview Video">
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="video-modal-close" aria-label="Close Video">&times;</button>
+      <div class="video-wrapper">
+        <video id="class-preview-video" controls loop playsinline></video>
+      </div>
+    </div>
+  </div>
 
   <!-- Toast Notification -->
   <div class="toast" id="toast" role="alert" aria-live="assertive">
